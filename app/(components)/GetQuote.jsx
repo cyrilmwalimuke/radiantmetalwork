@@ -115,7 +115,7 @@ export default function GetQuote() {
                 </div>
                 <input placeholder="Email" id='email' type="email" onChange={handleChange}  className='border-gray-500 border-[1.2px] rounded-md p-1 sm:mr-4'/>
                 <input placeholder="Phone" type="tel" id='tel' onChange={handleChange}  className='border-gray-500 border-[1.2px] rounded-md p-1'/>
-                <textarea cols={35} rows={4} id='details' placeholder="Project Details" onChange={handleChange} className='border-gray-500 border-[1.2px] rounded-md p-1 min-h-[100px]' />
+                <textarea cols={30} rows={4} id='details' placeholder="Project Details" onChange={handleChange} className='border-gray-500 border-[1.2px] rounded-md p-1 min-h-[100px]' />
                 <div>
                     <p>have an image of project, submit here:</p>
                     <input type="file" className='bg-gray-50 py-1 rounded-md w-fit' />
@@ -124,7 +124,7 @@ export default function GetQuote() {
 
                 <div className='mt-5'>
                     <h2 className='tex-lg font-semibold mb-2'>Company logo</h2>
-                    <input className = 'border-2 border-gray-300 rounded-md p-2 mt-2 w-64'
+                    <input className = 'border-2 border-gray-300 rounded-md p-2 mt-2 w-48'
                     onChange={(e) => setFile(e.target.files[0])}
                     type='file'
                     ref={fileRef}
