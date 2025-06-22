@@ -52,11 +52,11 @@ export default function Header() {
     </nav>
     <Menu className='sm"hidden' onClick={()=>setMobileMenu(true)}/>
 
-      {mobileMenu && (<div className='fixed inset-0 h-screen  bg-white shadow-lg z-50 transition-transform duration-300 sm:hidden'>
+      {/* {mobileMenu && (<div className='fixed inset-0 h-screen  bg-white shadow-lg z-50 transition-transform duration-300 sm:hidden'>
 
  
 
-</div>)}
+</div>)} */}
 
  
 
