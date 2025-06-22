@@ -127,7 +127,7 @@ export default function GetQuote() {
                 
                     accept='image/*'
                     />
-                    <img src={formData.image} alt='profile' className='h-24 w-24  mt-2'/>
+                    <img src={formData?.image} alt='profile' className='h-24 w-24  mt-2'/>
 
                     </div>
 
