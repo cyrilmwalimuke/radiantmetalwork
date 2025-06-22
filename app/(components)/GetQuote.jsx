@@ -109,18 +109,14 @@ export default function GetQuote() {
                 <div className='text-gray-500'>Get a free quote for your welding project</div>
               </div>
               <form onSubmit={handleSubmit} className="space-y-4">
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 gap-4">
                   <input placeholder="First Name" id='firstName' onChange={handleChange} className='border-gray-500 border-[1.2px] rounded-md p-1' />
                   <input placeholder="Last Name" id='lastName' onChange={handleChange}  className='border-gray-500 border-[1.2px] rounded-md p-1'/>
                 </div>
                 <input placeholder="Email" id='email' type="email" onChange={handleChange}  className='border-gray-500 border-[1.2px] rounded-md p-1 sm:mr-4'/>
                 <input placeholder="Phone" type="tel" id='tel' onChange={handleChange}  className='border-gray-500 border-[1.2px] rounded-md p-1'/>
                 <textarea cols={30} rows={4} id='details' placeholder="Project Details" onChange={handleChange} className='border-gray-500 border-[1.2px] rounded-md p-1 min-h-[100px]' />
-                <div>
-                    <p>have an image of project, submit here:</p>
-                    <input type="file" className='bg-gray-50 py-1 rounded-md w-fit' />
-                </div>
-
+                
 
                 <div className='mt-5'>
                     <h2 className='tex-lg font-semibold mb-2'>Company logo</h2>
