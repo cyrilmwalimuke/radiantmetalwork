@@ -1,0 +1,54 @@
+import Image from 'next/image'
+import React from 'react'
+
+export default function About() {
+  return (
+
+    <section id="about" className="py-20 px-7 lg:px-20 bg-black text-white">
+        <div className="container">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <Image
+                src="https://images.unsplash.com/photo-1508188609340-e8068b599193?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d2VsZGVyfGVufDB8fDB8fHww"
+                
+                alt="Mike Rodriguez welding"
+                width={500}
+                height={400}
+                className="rounded-lg"
+              />
+            </div>
+            <div className="space-y-6">
+              <h2 className="text-3xl lg:text-4xl font-bold">About Radiant Welding</h2>
+              <p className="text-lg text-gray-500">
+                With over 10 years of experience in the welding industry, We specialize in providing high-quality welding
+                and fabrication services for residential, commercial, and industrial clients.
+              </p>
+              <p className="text-gray-500">
+                Our commitment to excellence and attention to detail has earned us a reputation as one of the most
+                trusted welders and fabricators in the region. We hold multiple certifications and continuously update our skills to stay
+                current with industry standards and techniques.
+              </p>
+              <div className="grid grid-cols-2 gap-4 pt-4">
+                <div>
+                  <h3 className="font-semibold text-2xl text-orange-500">150+</h3>
+                  <p className="text-sm text-muted-foreground">Projects Completed</p>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-2xl text-orange-500">10+</h3>
+                  <p className="text-sm text-muted-foreground">Years Experience</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+        <div>
+      <h1>Welcome to Chat App</h1>
+      <a href="/chat">Go to Chat</a>
+    </div>
+      </section>
+  )
+}
