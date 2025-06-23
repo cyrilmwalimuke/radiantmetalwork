@@ -26,7 +26,7 @@ export default function Header() {
 
         </h1> */}
         <h1 className= {`font-bold  text-2xl text-orange-500  ${bebas.className}`}>
-        RadiantMetalWorkShop
+        RadiantMetalsWorkShop
 
         </h1>
 
