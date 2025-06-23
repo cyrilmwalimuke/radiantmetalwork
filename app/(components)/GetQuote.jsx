@@ -74,7 +74,7 @@ export default function GetQuote() {
     <section id="quote" className="py-20 b border-t-gray-500 border-[1.2px] bg-gray-50 px-7">
         <div className="container">
           <div className="text-center space-y-4 mb-12">
-            <h2 className="text-3xl lg:text-4xl font-bold">Get In Touch</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold">Get A Quote</h2>
             <p className="text-lg text-gray-500 max-w-2xl mx-auto">
               Ready to start your project? Contact me for a free consultation and quote
             </p>
@@ -92,7 +92,7 @@ export default function GetQuote() {
                 <Mail className="h-6 w-6 text-orange-500" />
                 <div>
                   <h3 className="font-semibold">Email</h3>
-                  <p className="text-muted-foreground">radiantmetalworkshop@gmail.com</p>
+                  <p className="text-muted-foreground">radiantmetalsworkshop@gmail.com</p>
                 </div>
               </div>
               <div className="flex items-center space-x-4">
@@ -108,7 +108,7 @@ export default function GetQuote() {
                 <div className='text-2xl'>Send a Message</div>
                 <div className='text-gray-500'>Get a free quote for your welding project</div>
               </div>
-              <form onSubmit={handleSubmit} className="space-y-4">
+              <form onSubmit={handleSubmit} className="space-y-4 mt-4">
                 <div className="grid grid-cols-1 gap-4">
                   <input placeholder="First Name" id='firstName' onChange={handleChange} className='border-gray-500 border-[1.2px] rounded-md p-1' />
                   <input placeholder="Last Name" id='lastName' onChange={handleChange}  className='border-gray-500 border-[1.2px] rounded-md p-1'/>
@@ -118,8 +118,8 @@ export default function GetQuote() {
                 <textarea cols={30} rows={4} id='details' placeholder="Project Details" onChange={handleChange} className='border-gray-500 border-[1.2px] rounded-md p-1 min-h-[100px]' />
                 
 
-                <div className='mt-5'>
-                    <h2 className='tex-lg font-semibold mb-2'>Company logo</h2>
+                <div className='mt-1'>
+                    <h2 className='tex-lg font-semibold mb-2'>Kindly upload a photo of the item or design you need welded so we can give you an accurate quote!(optional)</h2>
                     <input className = 'border-2 border-gray-300 rounded-md p-2 mt-2 w-48'
                     onChange={(e) => setFile(e.target.files[0])}
                     type='file'
@@ -127,7 +127,8 @@ export default function GetQuote() {
                 
                     accept='image/*'
                     />
-                    <img src={formData?.image} alt='profile' className='h-24 w-24  mt-2'/>
+                    {formData.image && <img src={formData?.image} alt='quote-image bg-gray-500' className='h-24 w-24  mt-2'/>}
+                    
 
                     </div>
 

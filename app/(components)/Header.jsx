@@ -17,26 +17,13 @@ export default function Header() {
   const [mobileMenu,setMobileMenu] = useState(false) 
   return (
 
-    <header className='flex justify-between px-5 sm:px-30 py-3 shadow-md items-center sticky top-0 z-50 bg-white'>
+    <header className='flex justify-between px-5 sm:px-30  shadow-md items-center sticky top-0 z-50 bg-gray-500'>
     
-    <div className='flex items-center '>
-        <Image src='/weilding-logo.png' height={20} width={50} alt='logo'/>
-        {/* <h1 className='font-bold sm:text-2xl '>
-        RadiantMetalWorkShop
 
-        </h1> */}
-        <h1 className= {`font-bold  text-2xl text-orange-500  ${bebas.className}`}>
-        RadiantMetalsWorkShop
 
-        </h1>
+    <Image src='/logo-main.png' height={70} width={70} alt='logo'/>
 
-        
-    
-        
-
-    </div>
-
-    <nav className= {`hidden sm:flex gap-20    ${bebas.className}`} >   
+    <nav className= {`hidden sm:flex gap-20 text-white    ${bebas.className}`} >   
    
           <Link href='/shop'>
           Shop
@@ -50,7 +37,7 @@ export default function Header() {
           </Link>
 
     </nav>
-    <Menu className='sm"hidden' onClick={()=>setMobileMenu(true)}/>
+    <Menu className='sm:hidden text-white' onClick={()=>setMobileMenu(true)}/>
 
       {/* {mobileMenu && (<div className='fixed inset-0 h-screen  bg-white shadow-lg z-50 transition-transform duration-300 sm:hidden'>
 

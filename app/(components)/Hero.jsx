@@ -49,17 +49,17 @@ export default function Hero() {
           </div>
 
           <h1 className="text-4xl lg:text-6xl font-bold tracking-tight text-white">Professional Welding Services</h1>
-            <p className="text-xl text-gray-400 max-w-lg">
-                  Certified artisans specializing in steel doors, steel gates, steel windows and grills work. Quality
+            <p className="text-xl text-gray-100 max-w-lg">
+                  Certified artisan specializing in steel doors, steel gates, steel windows and grills work. Quality
                   craftsmanship you can trust.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-                <a href='#quote' size="lg" className="bg-orange-500 hover:bg-orange-600 p-2 rounded-lg text-white text-center">
+                <a href='#quote' size="lg" className="bg-[#E6BE8A] p-2 rounded-lg text-white text-center">
                   Get Free Quote
                 </a>
                 <a href='#about' className='bg-white text-center p-2 rounded-lg hover:bg-gray-50 text-black'>
-                 About Us
+                 About Me
                 </a>
             </div>
         
