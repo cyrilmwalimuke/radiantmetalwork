@@ -12,8 +12,8 @@ export default function About() {
                 src="https://images.unsplash.com/photo-1508188609340-e8068b599193?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d2VsZGVyfGVufDB8fDB8fHww"
                 
                 alt="Mike Rodriguez welding"
-                width={500}
-                height={400}
+                width={300}
+                height={300}
                 className="rounded-lg"
               />
             </div>

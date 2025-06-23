@@ -18,7 +18,7 @@ export default function Header() {
   const [mobileMenu,setMobileMenu] = useState(false) 
   return (
 
-    <header className='flex justify-between  backdrop-blur-md px-5 sm:px-30  shadow-md items-center sticky top-0 z-50 bg-gray-500/40'>
+    <header className='flex justify-between  backdrop-blur-md px-5 sm:px-30  shadow-md items-center sticky top-0 z-50 bg-black/50'>
     
 
 
@@ -59,22 +59,22 @@ export default function Header() {
 
           <div className='flex flex-col gap-5' onClick={()=>setMobileMenu(false)}>
             <div className='flex justify-between text-lg'>
-              <a href="#about">About</a>
+              <a href="#portfolio">My Work</a>
               <ChevronRight/>
 
             </div>
             <div className='flex justify-between text-lg '>
-              <a href="#about">About</a>
+              <a href="#about"> About Me</a>
               <ChevronRight/>
 
             </div>
             <div className='flex justify-between text-lg'>
-              <a href="#about">About</a>
+              <Link href="/shop">Shop</Link>
               <ChevronRight/>
 
             </div>
             <div className='flex justify-between text-lg'>
-              <a href="#about">About</a>
+              <a href="#quote">Get a Quote</a>
               <ChevronRight/>
 
             </div>
