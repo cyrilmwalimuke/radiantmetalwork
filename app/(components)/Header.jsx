@@ -18,13 +18,13 @@ export default function Header() {
   const [mobileMenu,setMobileMenu] = useState(false) 
   return (
 
-    <header className='flex justify-between px-5 sm:px-30  shadow-md items-center sticky top-0 z-50 bg-gray-500'>
+    <header className='flex justify-between  backdrop-blur-md px-5 sm:px-30  shadow-md items-center sticky top-0 z-50 bg-gray-500/40'>
     
 
 
     <Image src='/logo-main.png' height={70} width={70} alt='logo'/>
 
-    <nav className= {`hidden sm:flex gap-20 text-white    ${bebas.className}`} > 
+    <nav className= {`hidden sm:flex gap-5 text-white sm:text-lg    ${bebas.className}`} > 
           
           
           <a href='#portfolio'>
@@ -63,7 +63,7 @@ export default function Header() {
               <ChevronRight/>
 
             </div>
-            <div className='flex justify-between text-lg'>
+            <div className='flex justify-between text-lg '>
               <a href="#about">About</a>
               <ChevronRight/>
 
