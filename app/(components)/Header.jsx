@@ -4,7 +4,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React, { useState } from 'react'
 import { Bebas_Neue, Montserrat } from 'next/font/google';
-import { Menu } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Menu } from 'lucide-react';
+import { X } from 'lucide-react';
 
 const bebas = Bebas_Neue({
   subsets: ['latin'],
@@ -23,27 +24,78 @@ export default function Header() {
 
     <Image src='/logo-main.png' height={70} width={70} alt='logo'/>
 
-    <nav className= {`hidden sm:flex gap-20 text-white    ${bebas.className}`} >   
+    <nav className= {`hidden sm:flex gap-20 text-white    ${bebas.className}`} > 
+          
+          
+          <a href='#portfolio'>
+          My Work
+          </a>
+
    
           <Link href='/shop'>
           Shop
           </Link>
-          <Link href='/about'>
+          <a href='#about'>
           About
-          </Link>
+          </a>
 
-          <Link href='contact'>
-          Contact
-          </Link>
+          <a href='#quote'>
+          Get A Quote
+          </a>
 
     </nav>
     <Menu className='sm:hidden text-white' onClick={()=>setMobileMenu(true)}/>
 
-      {/* {mobileMenu && (<div className='fixed inset-0 h-screen  bg-white shadow-lg z-50 transition-transform duration-300 sm:hidden'>
+      {
+      mobileMenu && (<div className='fixed inset-0 h-screen  bg-white shadow-lg z-50 transition-transform duration-300 sm:hidden'>
+        <div className='container flex flex-col p-8 gap-12'>
+          <div className='flex justify-between'>
+            <p className='text-lg'>Menu</p>
+            <button onClick={()=>setMobileMenu(false)}>
+             <X/>
+            </button>
+
+          </div>
+
+          <div className='flex flex-col gap-5' onClick={()=>setMobileMenu(false)}>
+            <div className='flex justify-between text-lg'>
+              <a href="#about">About</a>
+              <ChevronRight/>
+
+            </div>
+            <div className='flex justify-between text-lg'>
+              <a href="#about">About</a>
+              <ChevronRight/>
+
+            </div>
+            <div className='flex justify-between text-lg'>
+              <a href="#about">About</a>
+              <ChevronRight/>
+
+            </div>
+            <div className='flex justify-between text-lg'>
+              <a href="#about">About</a>
+              <ChevronRight/>
+
+            </div>
+            <div className='flex justify-between text-lg'>
+              <a href="#about">About</a>
+              <ChevronRight/>
+
+            </div>
+            
+            
+
+          </div>
+
+        </div>
+        
+
 
  
 
-</div>)} */}
+      </div>)
+      }
 
  
 
