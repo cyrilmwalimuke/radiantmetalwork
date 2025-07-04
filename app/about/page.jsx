@@ -19,15 +19,15 @@ export default function About() {
             </div>
             <div className="space-y-6">
               <h2 className="text-3xl lg:text-4xl font-bold">About Radiant Welding</h2>
-              <p className="text-lg text-gray-500">
+              {/* <p className="text-lg text-gray-500">
                 With over 10 years of experience in the welding industry, I specialize in providing high-quality welding
                 and fabrication services for residential, commercial, and industrial clients.
-              </p>
-              <p className="text-gray-500">
+              </p> */}
+              {/* <p className="text-gray-500">
                 My commitment to excellence and attention to detail has earned me a reputation as one of the most
                 trusted welders and fabricators in the region. I hold multiple certifications and continuously update my skills to stay
                 current with industry standards and techniques.
-              </p>
+              </p> */}
               <div className="grid grid-cols-2 gap-4 pt-4">
                 <div>
                   <h3 className="font-semibold text-2xl text-[#E6BE8A]">150+</h3>
