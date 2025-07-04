@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 const recentWork = [
@@ -57,7 +58,9 @@ export default function RecentWork() {
             )
         })}
       </div>
+      <Link className='mt-7 text-white px-5 py-2 bg-[#E6BE8A]' href='/shop'>Show More</Link>
     </div>
+    
   </section>
   )
 }

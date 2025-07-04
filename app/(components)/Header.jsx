@@ -19,10 +19,13 @@ export default function Header() {
   return (
 
     <header className='flex justify-between  backdrop-blur-md px-5 sm:px-30  shadow-md items-center sticky top-0 z-50 bg-black/50'>
-    
-
-
+    <Link href='/'>
     <Image src='/logo-main.png' height={70} width={70} alt='logo'/>
+
+    </Link>
+
+
+  
 
     <nav className= {`hidden sm:flex gap-5 text-white sm:text-lg    ${bebas.className}`} > 
           
@@ -78,11 +81,7 @@ export default function Header() {
               <ChevronRight/>
 
             </div>
-            <div className='flex justify-between text-lg'>
-              <a href="#about">About</a>
-              <ChevronRight/>
-
-            </div>
+           
             
             
 
