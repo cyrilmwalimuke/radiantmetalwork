@@ -2,6 +2,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Footer from "./(components)/Footer";
 import { CartProvider } from "./context/CartContext";
+import { UserProvider } from "./context/UserContext";
+import { Toaster } from 'react-hot-toast'
 
 
 const geistSans = Geist({
@@ -25,7 +27,12 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-         <CartProvider>{children}</CartProvider>
+        <Toaster position="top-center" />
+        <UserProvider>
+         <CartProvider>
+          {children}
+          </CartProvider>
+          </UserProvider>
       
        
         <Footer/>

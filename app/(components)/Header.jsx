@@ -2,10 +2,11 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import React, { useState } from 'react'
+import React, { use, useState } from 'react'
 import { Bebas_Neue, Montserrat } from 'next/font/google';
 import { ChevronLeft, ChevronRight, Menu } from 'lucide-react';
 import { X } from 'lucide-react';
+import { useUser } from '../context/UserContext';
 
 const bebas = Bebas_Neue({
   subsets: ['latin'],
@@ -16,6 +17,7 @@ const bebas = Bebas_Neue({
 export default function Header() {
 
   const [mobileMenu,setMobileMenu] = useState(false) 
+  const {user} =useUser();
   return (
 
     <header className='flex justify-between  backdrop-blur-md px-5 sm:px-30  shadow-md items-center sticky top-0 z-50 bg-black/50'>
@@ -45,6 +47,9 @@ export default function Header() {
           <a href='#quote'>
           Get A Quote
           </a>
+          {user?(<Link  href='login'>Log Out</Link>):(<Link  href='login'>Login</Link>)}
+
+          
 
     </nav>
     <Menu className='sm:hidden text-white' onClick={()=>setMobileMenu(true)}/>
@@ -53,7 +58,7 @@ export default function Header() {
       mobileMenu && (<div className='fixed inset-0 h-screen  bg-white shadow-lg z-50 transition-transform duration-300 sm:hidden'>
         <div className='container flex flex-col p-8 gap-12'>
           <div className='flex justify-between'>
-            <p className='text-lg'>Menu</p>
+            <p className='text-lg'></p>
             <button onClick={()=>setMobileMenu(false)}>
              <X/>
             </button>
@@ -81,6 +86,10 @@ export default function Header() {
               <ChevronRight/>
 
             </div>
+
+            {user?(<Link className='bg-black text-white rounded-md p-2 w-full text-center' href='login'>Log Out</Link>):(<Link  href='login'>Login</Link>)}
+
+
            
             
             

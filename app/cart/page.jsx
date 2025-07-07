@@ -5,12 +5,14 @@ import Image from "next/image"
 import Link from "next/link"
 import { Minus, Plus, ShoppingBag, Trash2, ArrowLeft, Tag } from "lucide-react"
 import { useCart } from "../context/CartContext"
+import { useUser } from "../context/UserContext"
 
 
 
 export default function Component() {
     const { cart, removeFromCart,getTotalQuantity,getTotalPrice} = useCart()
     console.log(cart)
+    const {user}  = useUser()
 
 
 
@@ -42,7 +44,7 @@ export default function Component() {
             <ShoppingBag className="mx-auto h-24 w-24 text-gray-300 mb-6" />
             <h2 className="text-2xl font-bold text-gray-900 mb-4">Your cart is empty</h2>
             <p className="text-gray-600 mb-8">{"Looks like you haven't added any items to your cart yet."}</p>
-            <Link href="/">
+            <Link href="/shop">
               <button size="lg" className="px-8">
                 Continue Shopping
               </button>
@@ -78,10 +80,8 @@ export default function Component() {
                     {/* Product Image */}
                     <div className="flex-shrink-0">
                       <div className="relative w-24 h-24 sm:w-32 sm:h-32 bg-gray-100 rounded-lg overflow-hidden">
-                        <Image src={item.imageUrls[0] || "/placeholder.svg"} alt={item.name} fill className="object-cover" />
-                        {item.originalPrice && (
-                          <div className="absolute top-2 left-2 bg-red-500 text-white text-xs">Sale</div>
-                        )}
+                        <Image src={item.imageUrls[0]} alt={item.name} fill className="object-cover" />
+                      
                       </div>
                     </div>
 
@@ -91,16 +91,12 @@ export default function Component() {
                         <div>
                           <h3 className="text-lg font-semibold text-gray-900 truncate">{item.name}</h3>
                           <p className="text-sm text-gray-600 mt-1">{item.variant}</p>
-                          {!item.inStock && (
-                            <div variant="destructive" className="mt-2">
-                              Out of Stock
-                            </div>
-                          )}
+                        
                         </div>
                         <button
                           variant="ghost"
                           size="sm"
-                          onClick={() => removeItem(item.id)}
+                          onClick={() => removeFromCart(item.id)}
                           className="text-gray-400 hover:text-red-500"
                         >
                           <Trash2 className="w-4 h-4" />
@@ -110,34 +106,12 @@ export default function Component() {
                       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                         {/* Price */}
                         <div className="flex items-center gap-2">
-                          <span className="text-lg font-bold text-gray-900">kshs {item.price.toFixed(2)}</span>
-                          {item.originalPrice && (
-                            <span className="text-sm text-gray-500 line-through">${item.originalPrice.toFixed(2)}</span>
-                          )}
+                          <span className="text-lg font-bold text-gray-900">kshs {item?.price.toLocaleString()}</span>
+                         
                         </div>
 
                         {/* Quantity Controls */}
-                        <div className="flex items-center gap-3">
-                          <button
-                            variant="outline"
-                            size="sm"
-                            onClick={() => updateQuantity(item.id, item.quantity - 1)}
-                            disabled={item.quantity <= 1 || !item.inStock}
-                            className="w-8 h-8 p-0"
-                          >
-                            <Minus className="w-3 h-3" />
-                          </button>
-                          <span className="w-8 text-center font-medium">{item.amount}</span>
-                          <button
-                            variant="outline"
-                            size="sm"
-                            onClick={() => updateQuantity(item.id, item.quantity + 1)}
-                            disabled={!item.inStock}
-                            className="w-8 h-8 p-0"
-                          >
-                            <Plus className="w-3 h-3" />
-                          </button>
-                        </div>
+                      
                       </div>
                     </div>
                   </div>
@@ -159,17 +133,9 @@ export default function Component() {
 
                 {/* Price Breakdown */}
                 <div className="space-y-3">
-                  <div className="flex justify-between text-sm">
-                    <span className="text-gray-600">Subtotal</span>
-                    <span className="font-medium">${getTotalPrice().toFixed(2)}</span>
-                  </div>
+                  
 
-                  <div className="flex justify-between text-sm">
-                    <span className="text-gray-600">Shipping</span>
-                    <span className="font-medium">
-                      {shipping === 0 ? <span className="text-green-600">Free</span> : `$${shipping.toFixed(2)}`}
-                    </span>
-                  </div>
+        
 
                  
 
@@ -179,22 +145,26 @@ export default function Component() {
 
                   <div className="flex justify-between text-lg font-bold">
                     <span>Total</span>
-                    <span>${getTotalPrice().toFixed(2)+shipping.toFixed(2)}</span>
+                  
+                    <span>kshs {getTotalPrice() .toLocaleString()}</span>
                   </div>
                 </div>
 
-                {shipping > 0 && (
-                  <div className="bg-blue-50 border border-blue-200 rounded-lg p-3">
-                    <p className="text-sm text-blue-800">Add ${(100 - getTotalPrice()).toFixed(2)} more for free shipping!</p>
-                  </div>
-                )}
+            
               </div>
               <div className="flex flex-col gap-3">
-                <button className="w-full" size="lg">
-                  Proceed to Checkout
-                </button>
-                <button variant="outline" className="w-full bg-transparent" asChild>
-                  <Link href="/">Continue Shopping</Link>
+                {user ? ( 
+                   <Link href='/check-out' className="w-full text-center bg-black text-white py-2 mt-3 rounded-lg" size="lg">
+                   Proceed to Checkout
+                 </Link>
+                ) : (
+                  <Link href='/check-out' className="w-full text-center bg-black text-white py-2 mt-3 rounded-lg" size="lg">
+                  Login to Checkout
+                </Link>
+                )}
+               
+                <button variant="outline" className="w-full bg-transparent border-gray-300 border-[1.2px] rounded-lg py-2 hover:bg-gray-100">
+                  <Link href="/shop">Continue Shopping</Link>
                 </button>
               </div>
             </div>

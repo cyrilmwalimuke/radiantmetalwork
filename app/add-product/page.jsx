@@ -15,6 +15,9 @@ export default function AddProduct() {
     name: '',
     price:null,
     category: '',
+ 
+  
+
 
     
   
@@ -156,13 +159,27 @@ export default function AddProduct() {
            id='price'
            />
 
-           <input
+           {/* <input
             type="text" 
             placeholder='category'
             className='p-3 border rounded-lg'
             id='category'
             onChange={handleChange}
-            />
+            /> */}
+
+            <select onChange={handleChange} className='p-3 border text-gray-500 rounded-lg' id='category'>
+            <option value="all">All</option>
+            <option value= "Main Door">Main Door</option>
+            <option value= "Window Grills">Window Grills</option>
+            <option value= "Grills"> Grills</option>
+            <option value= "custom-work">Custom Work</option>
+
+            <option value="welding-equipment">Welding Equipment</option>
+          
+           
+        
+
+            </select>
          
             
         </div>

@@ -30,7 +30,7 @@ export default function ShopHeader() {
     </Link>
 
     <Link href='/cart' className='relative'>
-        <div className='flex items-center justify-center absolute top-[-5px] right-[-10px] bg-black rounded-full h-5 w-5 text-white text-center p-1'>
+        <div className='flex items-center justify-center absolute top-[-5px] right-[-10px] bg-black rounded-full h-5 w-5 text-white text-center p-2'>
          {getTotalQuantity() > 0 ? getTotalQuantity() : 0}
          
           

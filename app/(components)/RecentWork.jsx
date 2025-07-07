@@ -58,7 +58,13 @@ export default function RecentWork() {
             )
         })}
       </div>
-      <Link className='mt-7 text-white px-5 py-2 bg-[#E6BE8A]' href='/shop'>Show More</Link>
+      <div className='mt-10 flex justify-center'>
+      <Link className='px-5 text-white  bg-[#E6BE8A] py-2 rounded-lg' href='/shop'>Show More</Link>
+
+      </div>
+   
+      
+      
     </div>
     
   </section>

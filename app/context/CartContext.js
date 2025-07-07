@@ -1,5 +1,6 @@
 "use client";
 import { createContext, useContext, useEffect, useState } from "react";
+import toast from 'react-hot-toast'
 
 // Create context
 const CartContext = createContext();
@@ -23,14 +24,43 @@ export const CartProvider = ({ children }) => {
   }, [cart]);
 
   // Add to cart
+  // const addToCart = (product) => {
+  //   setCart((prev) => {
+  //     const exists = prev.find((item) => item.id === product.id);
+  //     if (exists) {
+  //       return prev.map((item) =>
+  //         item.id === product.id ? { ...item, amount: item.amount + 1 } : item
+  //       );
+  //     }
+  //     return [...prev, { ...product, amount: 1 }];
+  //   });
+  // };
+
+
   const addToCart = (product) => {
     setCart((prev) => {
       const exists = prev.find((item) => item.id === product.id);
       if (exists) {
-        return prev.map((item) =>
-          item.id === product.id ? { ...item, amount: item.amount + 1 } : item
-        );
+        toast.error("Item is already in the cart!", {
+          style: {
+            border: '1px solid #e0b64f',
+            padding: '12px',
+            color: '#713200',
+          },
+          icon: '⚠️',
+        });
+        return prev;
       }
+  
+      toast.success("Item added to cart!", {
+        style: {
+          border: '1px solid #4caf50',
+          padding: '12px',
+          color: '#155724',
+        },
+        icon: '🛒',
+      });
+  
       return [...prev, { ...product, amount: 1 }];
     });
   };

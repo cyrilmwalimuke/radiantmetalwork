@@ -12,18 +12,18 @@ export default function About() {
                 src="https://images.unsplash.com/photo-1508188609340-e8068b599193?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d2VsZGVyfGVufDB8fDB8fHww"
                 
                 alt="Mike Rodriguez welding"
-                width={300}
-                height={300}
+                width={600}
+                height={400}
                 className="rounded-lg"
               />
             </div>
             <div className="space-y-6">
-              <h2 className="text-3xl lg:text-4xl font-bold">About Radiant Welding</h2>
-              <p className="text-lg text-gray-500">
+              <h2 className="text-3xl lg:text-4xl font-bold">About Radiant Metal Workshop</h2>
+              <p className="text-lg text-white">
                 With over 10 years of experience in the welding industry, I specialize in providing high-quality welding
                 and fabrication services for residential, commercial, and industrial clients.
               </p>
-              <p className="text-gray-500">
+              <p className=" text-gray-200">
                 My commitment to excellence and attention to detail has earned me a reputation as one of the most
                 trusted welders and fabricators in the region. I hold multiple certifications and continuously update my skills to stay
                 current with industry standards and techniques.
