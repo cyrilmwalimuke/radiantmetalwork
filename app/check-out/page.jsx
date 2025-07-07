@@ -100,11 +100,16 @@ export default function CheckOut() {
             firstName:formData.firstName,
             lastName:formData.lastName,
              email:formData.email,
-            total:total+selectedStation.fee,
+            // total:total+selectedStation.fee,
+            total:total + shipping,
+
             orderItems:cart,
             phone_number:formData.phone_number,
-            deliveryStation:selectedStation.name,
-            deliveryFee:selectedStation.fee,
+            // deliveryStation:selectedStation.name,
+            // deliveryFee:selectedStation.fee,
+             deliveryStation:"coast",
+            deliveryFee:shipping,
+
             amount:amount,
             // userRef:currentUser._id
             userRef:"64f0b1c2d4e3f8b5c8a9e7d1" // replace with actual user reference
