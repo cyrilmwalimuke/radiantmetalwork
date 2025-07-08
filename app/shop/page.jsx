@@ -9,6 +9,47 @@ import { useCart } from "../context/CartContext"
 import { useUser } from "../context/UserContext"
 
 
+export async function generateMetadata() {
+  return {
+    title: "Shop | Radiant Metals Workshop",
+    description: "Explore our custom welding and metal fabrication products. From iron gates to structural frames, we deliver expert craftsmanship.",
+    keywords: [
+      "welding",
+      "metal fabrication",
+      "custom welding",
+      "steel work",
+      "metal art",
+      "iron gates",
+      "metal grills",
+      "Radiant Metals Workshop",
+      "Kenya welding services",
+    ],
+    openGraph: {
+      title: "Shop | Radiant Metals Workshop",
+      description: "Explore our custom welding and metal fabrication products. From iron gates to structural frames, we deliver expert craftsmanship.",
+      url: "https://radiantmetalsworkshop.com/logo-main.png",
+      siteName: "Radiant Metals Workshop",
+      images: [
+        {
+          url: "https://radiantmetalsworkshop.com/logo-main.png", // Replace with your banner image
+          width: 1200,
+          height: 630,
+          alt: "Radiant Metals Workshop Banner",
+        },
+      ],
+      locale: "en_US",
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "Shop | Radiant Metals Workshop",
+      description: "Explore our custom welding and metal fabrication products. From iron gates to structural frames, we deliver expert craftsmanship.",
+      images: ["https://radiantmetalsworkshop.com/logo-main.png"],
+    },
+  }
+}
+
+
 
 
 

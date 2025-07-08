@@ -112,7 +112,7 @@ export default function CheckOut() {
 
             amount:amount,
             // userRef:currentUser._id
-            userRef:"64f0b1c2d4e3f8b5c8a9e7d1" // replace with actual user reference
+            userRef:user?._id// replace with actual user reference
 
             
 
