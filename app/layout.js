@@ -4,6 +4,7 @@ import Footer from "./(components)/Footer";
 import { CartProvider } from "./context/CartContext";
 import { UserProvider } from "./context/UserContext";
 import { Toaster } from 'react-hot-toast'
+import Script from "next/script";
 
 
 const geistSans = Geist({
@@ -61,6 +62,21 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+       <head>
+        <Script
+          id="structured-data-logo"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "Radiant Metals Workshop",
+              url: "https://radiantmetalsworkshop.com",
+              logo: "https://radiantmetalsworkshop.com/main-logo.png",
+            }),
+          }}
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
