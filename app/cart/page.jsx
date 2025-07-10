@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { Minus, Plus, ShoppingBag, Trash2, ArrowLeft, Tag } from "lucide-react"
@@ -14,26 +14,8 @@ export default function Component() {
     console.log(cart)
     const {user}  = useUser()
 
-
-
   
 
-  const updateQuantity = (id, newQuantity) => {
-    if (newQuantity < 1) return
-    setCartItems((items) => items.map((item) => (item.id === id ? { ...item, quantity: newQuantity } : item)))
-  }
-
-  const removeItem = (id) => {
-    setCartItems((items) => items.filter((item) => item.id !== id))
-  }
-
-  const applyPromoCode = () => {
-    if (promoCode.toLowerCase() === "save10") {
-      setPromoApplied(true)
-    }
-  }
-
-  const shipping = getTotalPrice() > 100 ? 0 : 9.99
 
 
   if (cart.length === 0) {
@@ -96,7 +78,7 @@ export default function Component() {
                         <button
                           variant="ghost"
                           size="sm"
-                          onClick={() => removeFromCart(item.id)}
+                          onClick={() => removeFromCart(item._id)}
                           className="text-gray-400 hover:text-red-500"
                         >
                           <Trash2 className="w-4 h-4" />
