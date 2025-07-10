@@ -4,21 +4,21 @@ import React from 'react'
 
 const recentWork = [
     {
-        title:'Window Grill',
-        category:'Grills',
-        image:"/window-grill.png"
+        title:'Sliding Gate',
+        category:'Gates',
+        image:"https://res.cloudinary.com/dh7gvpuz3/image/upload/v1751905140/g2w03umz2peboynhacqg.jpg"
     },
     {
         title:'Grills',
         category:'Grills',
-        image:"/grills-4.png"
+        image:"https://res.cloudinary.com/dh7gvpuz3/image/upload/v1751905861/hu6h0j8rvqfr6gaxio05.jpg"
 
 
     },
     {
       title:'Main Door',
       category:'Steel Doors',
-      image:"/main door-1.png"
+      image:"/steel door 1.jpg"
 
 
   },
