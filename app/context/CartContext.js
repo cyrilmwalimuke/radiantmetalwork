@@ -39,7 +39,7 @@ export const CartProvider = ({ children }) => {
 
   const addToCart = (product) => {
     setCart((prev) => {
-      const exists = prev.find((item) => item.id === product.id);
+      const exists = prev.find((item) => item._id === product._id);
       if (exists) {
         toast.error("Item is already in the cart!", {
           style: {

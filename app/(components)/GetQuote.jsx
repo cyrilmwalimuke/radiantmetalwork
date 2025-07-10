@@ -9,6 +9,7 @@ export default function GetQuote() {
     const fileRef = useRef(null);
     const [error,setError] = useState(null)
     const [loading,setLoading] = useState(false)
+    console.log(formData)
 
     console.log(formData)
     const handleChange = (e) =>{
