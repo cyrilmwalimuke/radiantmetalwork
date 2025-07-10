@@ -22,7 +22,6 @@ export default function ShopPage() {
     { value: "all", label: "All Products" },
     { value: "Main Door", label: "Main Door" },
     { value: "Grills", label: "Grills" },
-    { value: "Window Grills", label: "Window Grills" },
     { value: "custom-work", label: "Custom Fabrication" },
     { value: "welding-equipment", label: "Welding Equipment" }
   ]
@@ -44,19 +43,28 @@ export default function ShopPage() {
     fetchProducts()
   }, [])
 
+
   useEffect(() => {
     const filter = products?.filter((product) => {
-      const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                            product.description.toLowerCase().includes(searchTerm.toLowerCase())
-
-      const matchesCategory = selectedCategory === "all" ||
-        product.category?.toLowerCase() === selectedCategory.toLowerCase()
-
+      const name = product?.name?.toLowerCase?.() || ""
+      const description = product?.description?.toLowerCase?.() || ""
+      const category = product?.category?.toLowerCase?.() || ""
+  
+      const matchesSearch =
+        name.includes(searchTerm.toLowerCase()) ||
+        description.includes(searchTerm.toLowerCase())
+  
+      const matchesCategory =
+        selectedCategory === "all" || category === selectedCategory.toLowerCase()
+  
       return matchesSearch && matchesCategory
     })
-
+  
     setFilteredProducts(filter)
   }, [products, searchTerm, selectedCategory])
+  
+
+
 
   return (
     <div className="min-h-screen bg-background">
