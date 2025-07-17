@@ -54,17 +54,15 @@ const router = useRouter();
     
   };
   return (
-    <div>
+    <div className='px-6'>
         <div className='flex justify-center w-full'>
             
             {/* second div */}
 
-            <div className='flex justify-center items-center w-[50%] h-screen'>
+            <div className='flex justify-center items-center  h-screen'>
                 <div className='flex flex-col'>
-                <Link href='/' className='h-16 text-tracking text-2xl sm:hidden flex items-center justify-center w-full'>
-                    BRASSCRAFT
-
-                  </Link>
+              
+               
                     <p className='font-bold text-center text-2xl'>Sign in to your account</p>
                     <p className='mb-5 text-gray-500 text-center tex-xs sm:text-lg'>Enter your details below to access your account</p>
                     <form onSubmit={handleSubmit}>

@@ -76,13 +76,10 @@ export default function Register() {
           
             {/* second div */}
 
-            <div className='flex justify-center items-center w-[50%] h-screen sm:h-[650px]'>
+            <div className='flex justify-center items-center  h-screen'>
               <p></p>
                 <div className='flex flex-col'>
-                  <Link href='/' className='h-16 text-tracking text-2xl sm:hidden flex items-center justify-center w-full'>
-                    BRASSCRAFT
-
-                  </Link>
+                
                     <p className='font-bold text-center text-lg sm:text-2xl'>Create an Account</p>
                     <p className='mb-5 text-gray-500 text-center text-xs sm:text-lg'>Enter your details below to get started</p>
                     <form onSubmit={handleSubmit}>

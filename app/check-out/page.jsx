@@ -32,7 +32,7 @@ export default function CheckOut() {
 //    const router = useRouter()
   const [sidebar,setSideBar] = useState(false)
   const [temporaryLoading,setTemporaryLoading] = useState(false)
-  const shipping = 1
+  const shipping = 1000
   
   const [loading, setLoading] = useState(false);
     // const [selectedStation, setSelectedStation] = useState(pickupStations[0]);

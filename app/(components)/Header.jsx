@@ -17,7 +17,7 @@ const bebas = Bebas_Neue({
 export default function Header() {
 
   const [mobileMenu,setMobileMenu] = useState(false) 
-  const {user} =useUser();
+  const {user,logout} =useUser();
   return (
 
     <header className='flex justify-between  backdrop-blur-md px-5 sm:px-30  shadow-md items-center sticky top-0 z-50 bg-black/50'>
@@ -47,7 +47,7 @@ export default function Header() {
           <a href='#quote'>
           Get A Quote
           </a>
-          {user?(<Link  href='login'>Log Out</Link>):(<Link  href='login'>Login</Link>)}
+          {user?(<button onClick={()=>logout()}>Log Out</button>):(<Link  href='login'>Login</Link>)}
 
           
 
@@ -65,7 +65,7 @@ export default function Header() {
 
           </div>
 
-          <div className='flex flex-col gap-5' onClick={()=>setMobileMenu(false)}>
+          <div className='flex flex-col gap-5'>
             <div className='flex justify-between text-lg'>
               <a href="#portfolio">My Work</a>
               <ChevronRight/>
@@ -87,7 +87,7 @@ export default function Header() {
 
             </div>
 
-            {user?(<Link className='bg-black text-white rounded-md p-2 w-full text-center' href='login'>Log Out</Link>):(<Link  href='login'>Login</Link>)}
+            {user?(<Link className='bg-black text-white rounded-md p-2 w-full text-center' href='login'>Log Out</Link>):(<Link className='bg-black text-white rounded-md p-2 w-full text-center' href='login'>Login</Link>)}
 
 
            

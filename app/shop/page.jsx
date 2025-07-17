@@ -203,3 +203,69 @@ export default function ShopPage() {
     </div>
   )
 }
+
+
+// // app/shop/page.jsx
+// import Image from "next/image"
+// import Link from "next/link"
+// import ShopHeader from "../(components)/ShopHeader"
+
+// async function getProducts() {
+//   const res = await fetch("https://radiantmetalsworkshop.com/api/get-products", {
+//     cache: "no-store", // or "force-cache" if you want it cached
+//   })
+
+//   if (!res.ok) throw new Error("Failed to fetch products")
+
+//   return res.json()
+// }
+
+// export default async function ShopPage() {
+//   const products = await getProducts()
+
+//   return (
+//     <div className="min-h-screen bg-background">
+//       <ShopHeader />
+
+//       <section className="py-12 bg-gradient-to-r from-orange-50 to-red-50">
+//         <div className="container text-center space-y-4">
+//           <h1 className="text-4xl lg:text-5xl font-bold">Professional Welding Shop</h1>
+//           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+//             Quality custom fabricated items and equipment from a trusted professional
+//           </p>
+//         </div>
+//       </section>
+
+//       <div className="container py-8 px-8">
+//         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+//           {products.map((product) => (
+//             <div
+//               key={product._id}
+//               className="group border rounded-lg hover:shadow-lg transition overflow-hidden"
+//             >
+//               <div className="relative aspect-square">
+//                 <Image
+//                   src={product.imageUrls?.[0] || "/placeholder.svg"}
+//                   alt={product.name}
+//                   fill
+//                   className="object-cover transition-transform duration-300 group-hover:scale-105"
+//                 />
+//               </div>
+//               <div className="p-4 space-y-2">
+//                 <h3 className="font-semibold line-clamp-2">{product.name}</h3>
+//                 <p className="text-sm text-muted-foreground line-clamp-2">
+//                   {product.description}
+//                 </p>
+//                 <div className="flex items-center justify-between">
+//                   <span className="text-lg font-bold">
+//                     Ksh {product.price.toLocaleString()}
+//                   </span>
+//                 </div>
+//               </div>
+//             </div>
+//           ))}
+//         </div>
+//       </div>
+//     </div>
+//   )
+// }
